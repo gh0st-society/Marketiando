@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Usuarios</title>
+    <link href="/frontend/estilos/estilos.css" rel="stylesheet">
+
+</head>
+<body>
+    <header><h1>Buscar Producto</h1></header>
+    <nav>
+        <button class="button-enviar"><a href="/frontend/index.html">Inicio</a></button>
+        <button class="button-enviar"><a href="/frontend/registrar_usuario.html">Registrar Usuario</a></button>
+        <button class="button-enviar button-foco"><a href="/frontend/ver_usuarios.html">Ver usuario</a></button>
+    </nav>
+
+    <div>
+        <input type="submit" id="cargar" name="cargar" value="Cargar Todo"><br><br>
+        <input type="text" id="prioridad"   name="prioridad" placeholder="Prioridad">
+        <input type="submit" id="buscar_prioridad" name="buscar_prioridad" value="Buscar por prioridad"><br><br>
+        <input type="text" id="id"   name="id" placeholder="Prioridad">
+        <input type="submit" id="buscar_id" name="buscar_id" value="Buscar por id">
+    </div>
+
+    <section>
+        <table>
+            <thead>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>email</th>
+                <th>Prioridad</th>
+                <th>Actualizar</th>  
+                <th>Eliminar</th>             
+            </thead>
+            <tbody id="cuerpo">
+            
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>
