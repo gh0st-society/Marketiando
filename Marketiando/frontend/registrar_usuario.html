@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<script src="/frontend/jquery/jquery-3.6.0.min.js"></script>
+<script>
+    $(function(){
+        $("#guardar_producto").on("click",function(e){
+            e.preventDefault();
+            let nombre = document.getElementById("nombre").value;
+            let email= $("#email").val();
+            let prioridad= $("#prioridad").val();
+
+            fetch("http://127.0.0.1:8080/usuario" ,{
+                method:"POST",
+                mode:"cors",
+                cache:"no-cache",
+                headers:{"Content-type":"application/json"},
+                body:JSON.stringify({nombre,email,prioridad})
+
+            }).then(respose => respose.json()).then(()=>alert("Guardado"))
+
+        });
+    });
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario</title>
+    <link href="/frontend/estilos/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <div id="Logo">
+        <img src="/frontend/Imagenes/Logo.jpg" height="175" width="200">
+    </div>
+    <nav>
+        <button class="button-enviar"><a href="/frontend/index.html">Inicio</a></button>
+        <button class="button-enviar button-foco"><a href="/frontend/registrar_usuario.html">Registrar Producto</a></button>
+        <button class="button-enviar"><a href="/frontend/ver_usuarios.html">Ver Producto</a></button>
+    </nav>
+    <section class="form-register">
+        <h1>Formulario de Registro de Producto</h1>
+        <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre de Producto">
+        <input class="controls" type="text" name="email" id="email" placeholder="Tipo de Producto">
+        <input class="controls" type="text" name="prioridad" id="prioridad" placeholder="ID">
+        <input  type="submit" value="Guardar" class="botons" id="guardar_producto">
+      </section>
+</body>
+</html>
